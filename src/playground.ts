@@ -63,13 +63,13 @@ interface InputFeature {
 }
 
 let INPUTS: {[name: string]: InputFeature} = {
-  "x": {f: (x, y) => x, label: "X_1"},
-  "y": {f: (x, y) => y, label: "X_2"},
-  "xSquared": {f: (x, y) => x * x, label: "X_1^2"},
-  "ySquared": {f: (x, y) => y * y,  label: "X_2^2"},
-  "xTimesY": {f: (x, y) => x * y, label: "X_1X_2"},
-  "sinX": {f: (x, y) => Math.sin(x), label: "sin(X_1)"},
-  "sinY": {f: (x, y) => Math.sin(y), label: "sin(X_2)"},
+  "x": {f: (x, y) => x, label: "X"},
+  "y": {f: (x, y) => y, label: "Y"},
+  "xSquared": {f: (x, y) => x * x, label: "X^2"},
+  "ySquared": {f: (x, y) => y * y,  label: "Y^2"},
+  "xTimesY": {f: (x, y) => x * y, label: "XY"},
+  "sinX": {f: (x, y) => Math.sin(x), label: "sin(X)"},
+  "sinY": {f: (x, y) => Math.sin(y), label: "sin(Y)"},
 };
 
 let HIDABLE_CONTROLS = [
@@ -103,7 +103,7 @@ class Player {
     } else {
       this.isPlaying = true;
       if (iter === 0) {
-        simulationStarted();
+        //simulationStarted();
       }
       this.play();
     }
@@ -196,7 +196,7 @@ function makeGUI() {
     player.pause();
     userHasInteracted();
     if (iter === 0) {
-      simulationStarted();
+      //simulationStarted();
     }
     oneStep();
   });
@@ -1099,8 +1099,8 @@ function userHasInteracted() {
   if (state.tutorial != null && state.tutorial !== '') {
     page = `/v/tutorials/${state.tutorial}`;
   }
-  ga('set', 'page', page);
-  ga('send', 'pageview', {'sessionControl': 'start'});
+  //ga('set', 'page', page);
+  //ga('send', 'pageview', {'sessionControl': 'start'});
 }
 
 function simulationStarted() {
