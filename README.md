@@ -6,6 +6,8 @@ Your feedback is highly appreciated!
 
 **If you'd like to contribute, be sure to review the [contribution guidelines](CONTRIBUTING.md).**
 
+*The playground in this branch has been simplified for use within Jupyter notebooks for the Open University module TM129 introductory robotics block. *
+
 ## Development
 
 To run the visualization locally, run:
